@@ -1,0 +1,24 @@
+include mixins/message
+
+doctype html
+html(lang="ko")
+  head
+    title #{ pageTitle } | Utube
+    link(
+      rel="stylesheet",
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    )
+    link(rel="stylesheet", href="/static/css/styles.css")
+  body
+    if messages.error
+      +message('error', messages.error)
+    if messages.error
+      +message('info', messages.info)
+    if messages.error
+      +message('sucess', messages.sucess)
+    include partials/header
+    main
+      block content
+    include partials/footer
+  script(src="/static/js/main.js")
+  block scripts
